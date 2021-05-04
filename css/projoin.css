@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+
+*{
+    font-family: 'Noto Serif', serif;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+/*漢堡選單icon*/
+.background-img{
+    background-image: url(../img/12.jpg);
+    height: 60vh;
+    background-position: 50% 10%;
+}
+.menu-btn{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	transition: all .5s ease-in-out;
+}
+.menu-btn_burger{
+	width: 40px;
+	height: 2px;
+	background:#000;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(255,101,47,.2);
+	transition: all .5s ease-in-out;
+}
+.menu-btn_burger1,
+.menu-btn_burger2{
+	position: absolute;
+	width: 40px;
+	height: 2px;
+	background: #000;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(255,101,47,.2);
+	transition: all .5s ease-in-out;
+}
+.menu-btn_burger1{
+	transform: translateY(-10px);
+}
+.menu-btn_burger2{
+	transform: translateY(10px);
+} 
+
+/*animation*/
+.menu-btn.open .menu-btn_burger{
+	transform: translateX(-50px);
+	background: transparent;
+	box-shadow: none;
+}
+.menu-btn.open .menu-btn_burger1{
+	transform: rotate(45deg) translate(35px,-35px);
+}
+.menu-btn.open .menu-btn_burger2{
+	transform: rotate(-45deg) translate(35px,35px);
+}
+/*side-menu*/
+.side-menu{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 100;
+    height: 100vh;
+    width: 365px;
+    background-color: rgb(230, 213, 63);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 100px;
+    transition: all 0.7s;
+    transform: translateX(-365px);
+}
+.side-menu ul{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.side-menu ul li a{
+    text-decoration: none;
+    font-size: 27px;
+    color: #fff;
+    text-align: center;
+    display: block;
+    width: 365px;
+    padding: 20px 0;
+}
+.side-menu ul li a:hover{
+    background-color: #fff;
+    color: rgb(230, 213, 63);
+}
+/*menu fadein 效果*/
+.side-menu-ul #home{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+.side-menu-ul #about{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+.side-menu-ul #starring{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+.side-menu-ul #productjoin{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.side-menu-ul #eshop{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+}
+.side-menu-ul #project{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+.contact-fadein{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 1.7s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadein{
+    0% {transform: translateX(-365px);}
+    100% {transform: translateX(0px);}
+}
+
+.contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact .contact-divide{
+    display: inline-block;
+    width: 300px;
+    height: 1px;
+    background-color: #fff;
+    margin-bottom: 45px;
+}
+.contact p{
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+.contact p i{
+    margin-right: 10px;
+}
+
+
+/*header*/
+.header-navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+}
+.navbar-wrapper{
+    max-width: 1780px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+.navbar-wrapper h1{
+   margin-left: 10px;
+   margin-right: auto;
+}
+.navbar-wrapper h1 a{
+    color: #000;
+    font-size: 30px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.navbar-wrapper ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+.navbar-wrapper ul li{
+    margin: 0 10px;
+}
+.navbar-wrapper ul li a{
+    color: #000;
+    text-decoration: none;
+}
+/*社交*/
+.social{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(219, 198, 11);
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 99;
+    transform: translateY(-50%);
+    padding: 12px 17px;
+}
+.social a{
+    margin: 12px 0
+}
+.social a i{
+    color: #fff;
+}
+/*節目企劃參與*/
+.project-container{
+    margin: 0px auto;
+    background-color: #eeebdf;
+    padding: 100px;
+}
+.project-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;    
+    color: rgb(0, 0, 0);
+    width: 35%;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+    padding: 30px;
+}
+.project-content h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.project-content h2 span{
+    color: rgb(199, 115, 47);
+    font-size: 18px;
+}
+.project-content img{
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px 12px #ec584450;
+}
+.project-content h3, .project-content h4, .project-content p{
+    margin-bottom: 20px;
+}
+
+.project-content p span{
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 20px;
+    color:rgb(90, 32, 6)
+}
+
+
+/*footer*/
+.footer{
+    background-color: rgb(238, 235, 235);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+    line-height: 12px;
+}
+.footer p:first-of-type{
+    font-family: 'Song Myung', serif;
+}
+.footer p:last-of-type{
+    font-size: 14px;
+}

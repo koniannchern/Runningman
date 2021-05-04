@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+
+*{
+    font-family: 'Noto Serif', serif;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+/*漢堡選單icon*/
+.background-img{
+    background-image: url(../img/12.jpg);
+    height: 60vh;
+    background-position: 50% 10%;
+}
+.menu-btn{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	transition: all .5s ease-in-out;
+}
+.menu-btn_burger{
+	width: 40px;
+	height: 2px;
+	background:#000;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(255,101,47,.2);
+	transition: all .5s ease-in-out;
+}
+.menu-btn_burger1,
+.menu-btn_burger2{
+	position: absolute;
+	width: 40px;
+	height: 2px;
+	background: #000;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(255,101,47,.2);
+	transition: all .5s ease-in-out;
+}
+.menu-btn_burger1{
+	transform: translateY(-10px);
+}
+.menu-btn_burger2{
+	transform: translateY(10px);
+} 
+
+/*animation*/
+.menu-btn.open .menu-btn_burger{
+	transform: translateX(-50px);
+	background: transparent;
+	box-shadow: none;
+}
+.menu-btn.open .menu-btn_burger1{
+	transform: rotate(45deg) translate(35px,-35px);
+}
+.menu-btn.open .menu-btn_burger2{
+	transform: rotate(-45deg) translate(35px,35px);
+}
+/*side-menu*/
+.side-menu{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 100;
+    height: 100vh;
+    width: 365px;
+    background-color: rgb(230, 213, 63);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 100px;
+    transition: all 0.7s;
+    transform: translateX(-365px);
+}
+.side-menu ul{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.side-menu ul li a{
+    text-decoration: none;
+    font-size: 27px;
+    color: #fff;
+    text-align: center;
+    display: block;
+    width: 365px;
+    padding: 20px 0;
+}
+.side-menu ul li a:hover{
+    background-color: #fff;
+    color: rgb(230, 213, 63);
+}
+/*menu fadein 效果*/
+.side-menu-ul #home{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+.side-menu-ul #about{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+.side-menu-ul #starring{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+.side-menu-ul #productjoin{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.side-menu-ul #eshop{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+}
+.contact-fadein{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 1.7s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadein{
+    0% {transform: translateX(-365px);}
+    100% {transform: translateX(0px);}
+}
+
+.contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact .contact-divide{
+    display: inline-block;
+    width: 300px;
+    height: 1px;
+    background-color: #fff;
+    margin-bottom: 45px;
+}
+.contact p{
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+.contact p i{
+    margin-right: 10px;
+}
+
+
+/*header*/
+.header-navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+}
+.navbar-wrapper{
+    max-width: 1780px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+.navbar-wrapper h1{
+   margin-left: 10px;
+   margin-right: auto;
+}
+.navbar-wrapper h1 a{
+    color: #000;
+    font-size: 30px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.navbar-wrapper ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+.navbar-wrapper ul li{
+    margin: 0 10px;
+}
+.navbar-wrapper ul li a{
+    color: #000;
+    text-decoration: none;
+}
+/*社交*/
+.social{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(219, 198, 11);
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 99;
+    transform: translateY(-50%);
+    padding: 12px 17px;
+}
+.social a{
+    margin: 12px 0
+}
+.social a i{
+    color: #fff;
+}
+/*註冊成功*/
+.success-container{
+    width: 60%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 1px solid rgb(209, 198, 40);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.success-container span{
+    display: block;
+    background-color: rgba(230, 213, 63, 0.5);
+    width: 80%;
+    height: 1px;
+    margin-bottom: 20px;
+}
+.success-title{
+    display: flex;
+    align-items:flex-end;
+    margin-bottom: 20px;
+}
+.success-title p{
+    font-size: 20px;
+    color:saddlebrown;
+}
+.success-content{
+    margin-bottom: 20px;
+}
+.success-btn a.btn{
+    background-color: rgb(230, 213, 63);
+    font-weight: bold;
+}
+.success-btn a.btn:hover{
+    background-color: rgb(236, 214, 9);
+}
+
+
+/*footer*/
+.footer{
+    background-color: rgb(238, 235, 235);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px 20px;
+    line-height: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.footer p:first-of-type{
+    font-family: 'Song Myung', serif;
+}
+.footer p:last-of-type{
+    font-size: 14px;
+}

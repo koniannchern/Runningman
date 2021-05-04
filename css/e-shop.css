@@ -1,0 +1,535 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+
+*{
+    font-family: 'Noto Serif', serif;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+/*漢堡選單icon*/
+.background-img{
+    background-image: url(../img/12.jpg);
+    height: 60vh;
+    background-position: 50% 10%;
+}
+.menu-btn{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	transition: all .5s ease-in-out;
+}
+.menu-btn_burger{
+	width: 40px;
+	height: 2px;
+	background:#000;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(255,101,47,.2);
+	transition: all .5s ease-in-out;
+}
+.menu-btn_burger1,
+.menu-btn_burger2{
+	position: absolute;
+	width: 40px;
+	height: 2px;
+	background: #000;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(255,101,47,.2);
+	transition: all .5s ease-in-out;
+}
+.menu-btn_burger1{
+	transform: translateY(-10px);
+}
+.menu-btn_burger2{
+	transform: translateY(10px);
+} 
+
+/*animation*/
+.menu-btn.open .menu-btn_burger{
+	transform: translateX(-50px);
+	background: transparent;
+	box-shadow: none;
+}
+.menu-btn.open .menu-btn_burger1{
+	transform: rotate(45deg) translate(35px,-35px);
+}
+.menu-btn.open .menu-btn_burger2{
+	transform: rotate(-45deg) translate(35px,35px);
+}
+/*side-menu*/
+.side-menu{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 100;
+    height: 100vh;
+    width: 365px;
+    background-color: rgb(230, 213, 63);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 100px;
+    transition: all 0.7s;
+    transform: translateX(-365px);
+}
+.side-menu ul{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.side-menu ul li a{
+    text-decoration: none;
+    font-size: 27px;
+    color: #fff;
+    text-align: center;
+    display: block;
+    width: 365px;
+    padding: 20px 0;
+}
+.side-menu ul li a:hover{
+    background-color: #fff;
+    color: rgb(230, 213, 63);
+}
+/*menu fadein 效果*/
+.side-menu-ul #home{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+.side-menu-ul #about{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+.side-menu-ul #starring{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+.side-menu-ul #productjoin{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.side-menu-ul #eshop{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+}
+.side-menu-ul #project{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+.contact-fadein{
+    transform: translateX(-365px);
+    animation-name: fadein;
+    animation-duration: 1.7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein{
+    0% {transform: translateX(-365px);}
+    100% {transform: translateX(0px);}
+}
+
+.contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact .contact-divide{
+    display: inline-block;
+    width: 300px;
+    height: 1px;
+    background-color: #fff;
+    margin-bottom: 45px;
+}
+.contact p{
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+.contact p i{
+    margin-right: 10px;
+}
+
+
+/*header*/
+.header-navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+}
+.navbar-wrapper{
+    max-width: 1780px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+.navbar-wrapper h1{
+   margin-left: 10px;
+   margin-right: auto;
+}
+.navbar-wrapper h1 a{
+    color: #000;
+    font-size: 30px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.navbar-wrapper ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+.navbar-wrapper ul li{
+    margin: 0 10px;
+}
+.navbar-wrapper ul li a{
+    color: #000;
+    text-decoration: none;
+}
+/*社交*/
+.social{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(219, 198, 11);
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 99;
+    transform: translateY(-50%);
+    padding: 12px 17px;
+}
+.social a{
+    margin: 12px 0
+}
+.social a i{
+    color: #fff;
+}
+/*E-SHOP標題*/
+.marketing h2{
+   text-align: center;
+   margin: 40px 0;
+}
+/*e-shop*/
+.eshop-container{
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+.eshop-container h2{
+    text-align: center;
+}
+.eshop-product1{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+.eshop-product2{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+.shop-item-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*購物順序標題*/
+.order-step-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+.order-step-title h3{
+    font-size: 35px;
+}
+.order-step-title p{
+    color: rgb(145, 125, 125);
+}
+
+/*購物順序*/
+.order-step{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 50px 22px;
+}
+.order-step .box p{
+    width: 30px;
+    height: 30px;
+    border: 3px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.step-box1 p{
+    background-color: #333;
+    color: #fff;
+}
+.step-box1 span:after{
+    content: '購物車';
+    display: block;
+    transform: translateX(-40px) translateY(25px);
+}
+.step-box2 span:after{
+    content: '填寫資料';
+    display: block;
+    transform: translateX(-44px) translateY(25px);
+}
+.step-box3:after{
+    content: '訂單確認';
+    display: block;
+    transform: translateX(-44px) translateY(25px);
+}
+.order-step .box{
+    display: flex;
+    align-items: center;
+}
+.order-step .box span{
+    display: block;
+    background-color: #333;
+    width: 220px;
+    height: 3px;
+    transform: translateY(-8px);
+}
+
+
+
+
+
+
+
+/*購物車*/
+.cart-container{
+    margin-top: 30px;
+}
+.cart-container>span{
+    background-color: rgb(230, 213, 63);
+    display: block;
+    color: #fff;
+    font-size: 25px;
+    padding: 5px 0 5px 5px;
+}
+.cart-container>.cart-row{
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(177, 170, 170);;
+}
+.cart-row{
+    display: flex;
+    align-items: center;
+}
+.cart-column{
+    padding: 10px 0;
+}
+.cart-item {
+    width: 45%;
+}
+.cart-header{
+    font-weight: bold;
+    font-size: 18px;
+}
+.cart-price {
+    width: 25%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.cart-item-title {
+    color: #333;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+.cart-item-image {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+}
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+.cart-items .cart-row{
+    border-bottom: 1px solid rgb(177, 170, 170);
+}
+/*訂單資訊*/
+.order-info-container{
+    max-width: 60%;
+    margin: 0 auto 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.order-method{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.order-method label{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.order-method select{
+    margin-bottom: 10px;
+}
+.order-method .method-title{
+    background-color: rgb(230, 213, 63);
+    color: #fff;
+    padding: 5px 0 5px 5px;
+    font-size: 25px;
+}
+.order-method p{
+    margin: 5px 0 0 0;
+    color: rgb(114, 110, 110)
+}
+.cart-total{
+    width: 30%;
+}
+.cart-total .order-info{
+    background-color: rgb(230, 213, 63);
+    display: block;
+    color: #fff;
+    padding: 5px 0 5px 5px;
+    font-size: 25px;
+}
+.cart-total>div{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-total>div p{
+    font-size: 18px;
+    font-weight: bold;
+}
+.cart-total button.btn{
+    background-color: rgb(97, 93, 87);
+    color: #fff;
+    width: 100%;
+}
+.cart-total button.btn:hover{
+    background-color: rgb(73, 67, 59);
+}
+
+.login-tell-img{
+    display: flex;
+    justify-content: center;
+}
+img.login-tell{
+    width: 37%;
+    
+}
+/*footer*/
+.footer{
+    background-color: rgb(238, 235, 235);
+}
+.footer-wrapper{
+    max-width: 65%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    line-height: 30px;
+}
+.footer-wrapper a{
+    color: #000;
+    font-weight:100;
+}
+.footer-wrapper a:hover{
+    text-decoration: none;
+    color:rgb(230, 213, 63);
+}
+.footer-title{
+    margin-bottom: 15px;
+}
+.footer-title h2{
+    
+}
+.footer-title h2 span{
+    font-size: 16px;
+    font-family: 'Song Myung', serif;
+    letter-spacing: 14px;
+    font-weight: bold;
+}
+.footer-qa{
+    margin-bottom: 15px;
+}
+.footer-qa p{
+    margin: 0;
+}
+.footer-copyright p{
+    margin: 0;
+}
+.footer-box2{
+    display: flex;
+}
+.footer-info{
+    display: flex;
+    flex-direction: column;
+}
+.footer-shopping{
+    display: flex;
+    flex-direction: column;
+    margin-left: 35px;
+}
+.footer-account{
+    display: flex;
+    flex-direction: column;
+    margin-left: 35px;
+}
+@media(max-width:1200px){
+    .footer-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-box1{
+        margin-bottom: 25px;
+        text-align: center;
+    }
+}
